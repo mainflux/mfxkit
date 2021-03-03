@@ -1,10 +1,10 @@
-# Mfxkit
+# Mainflux Starter Kit
 
-Mfxkit service provides a barebones HTTP API and Service interface implementation for development of a core Mainflux service.
+Mfx-Kit service provides a barebones HTTP API and Service interface implementation for development of a core Mainflux service.
 
 ## How-to
 
-Copy `mfxkit` directory to the `mainflux` root directory, e.g. `~/go/src/github.com/mainflux/mainflux/`. Copy `cmd/mfxkit` directory to `mainflux/cmd` directory.
+Copy `mfx-kit` directory to the `mainflux` root directory, e.g. `~/go/src/github.com/mainflux/mainflux/`. Copy `cmd/mfxkit` directory to `mainflux/cmd` directory.
 
 In `mainflux` root directory run
 
