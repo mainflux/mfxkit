@@ -1,17 +1,13 @@
-//
-// Copyright (c) 2019
-// Mainflux
-//
+// Copyright (c) Mainflux
 // SPDX-License-Identifier: Apache-2.0
-//
 
 package http
 
 import (
 	"context"
 
-	"github.com/darkodraskovic/mfxkit/mfxkit"
 	"github.com/go-kit/kit/endpoint"
+	"github.com/mainflux/mainflux/mfxkit"
 )
 
 func pingEndpoint(svc mfxkit.Service) endpoint.Endpoint {

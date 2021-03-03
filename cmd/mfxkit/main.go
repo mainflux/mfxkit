@@ -17,11 +17,11 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/darkodraskovic/mfxkit/mfxkit"
-	"github.com/darkodraskovic/mfxkit/mfxkit/api"
-	mfxkithttpapi "github.com/darkodraskovic/mfxkit/mfxkit/api/mfxkit/http"
 	"github.com/mainflux/mainflux"
 	"github.com/mainflux/mainflux/logger"
+	"github.com/mainflux/mainflux/mfxkit"
+	"github.com/mainflux/mainflux/mfxkit/api"
+	mfxkithttpapi "github.com/mainflux/mainflux/mfxkit/api/mfxkit/http"
 
 	kitprometheus "github.com/go-kit/kit/metrics/prometheus"
 	opentracing "github.com/opentracing/opentracing-go"
@@ -39,10 +39,10 @@ const (
 
 	envLogLevel   = "MF_MFXKIT_LOG_LEVEL"
 	envHTTPPort   = "MF_MFXKIT_HTTP_PORT"
-	envJaegerURL  = "MF_JAEGER_URL"
 	envServerCert = "MF_MFXKIT_SERVER_CERT"
 	envServerKey  = "MF_MFXKIT_SERVER_KEY"
 	envSecret     = "MF_MFXKIT_SECRET"
+	envJaegerURL  = "MF_JAEGER_URL"
 )
 
 type config struct {
@@ -50,10 +50,10 @@ type config struct {
 	httpPort     string
 	authHTTPPort string
 	authGRPCPort string
-	jaegerURL    string
 	serverCert   string
 	serverKey    string
 	secret       string
+	jaegerURL    string
 }
 
 func main() {

@@ -1,9 +1,5 @@
-//
-// Copyright (c) 2019
-// Mainflux
-//
+// Copyright (c) Mainflux
 // SPDX-License-Identifier: Apache-2.0
-//
 
 // +build !test
 
@@ -13,8 +9,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/darkodraskovic/mfxkit/mfxkit"
 	log "github.com/mainflux/mainflux/logger"
+	"github.com/mainflux/mainflux/mfxkit"
 )
 
 var _ mfxkit.Service = (*loggingMiddleware)(nil)

@@ -1,9 +1,5 @@
-//
-// Copyright (c) 2019
-// Mainflux
-//
+// Copyright (c) Mainflux
 // SPDX-License-Identifier: Apache-2.0
-//
 
 // +build !test
 
@@ -12,8 +8,8 @@ package api
 import (
 	"time"
 
-	"github.com/darkodraskovic/mfxkit/mfxkit"
 	"github.com/go-kit/kit/metrics"
+	"github.com/mainflux/mainflux/mfxkit"
 )
 
 var _ mfxkit.Service = (*metricsMiddleware)(nil)

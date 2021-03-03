@@ -1,13 +1,10 @@
 # Mfxkit
 
-Mfxkit service provides a barebones HTTP API for development of a Mainflux
-service.
+Mfxkit service provides a barebones HTTP API and Service interface implementation for development of a core Mainflux service.
 
 ## Configuration
 
-The service is configured using the environment variables presented in the
-following table. Note that any unset variables will be replaced with their
-default values.
+The service is configured using the environment variables from the following table. Note that any unset variables will be replaced with their default values.
 
 | Variable              | Description                                             | Default |
 |-----------------------|---------------------------------------------------------|---------|
@@ -20,9 +17,7 @@ default values.
 
 ## Deployment
 
-The service itself is distributed as Docker container. The following snippet
-provides a compose file template that can be used to deploy the service container
-locally:
+The service is distributed as a Docker container. The following snippet provides a compose file template that can be used to deploy the service container locally:
 
 ```yaml
 version: "3"
@@ -37,8 +32,8 @@ services:
       MF_MFXKIT_HTTP_PORT: [Service HTTP port]
       MF_MFXKIT_SERVER_CERT: [String path to server cert in pem format]
       MF_MFXKIT_SERVER_KEY: [String path to server key in pem format]
-      MF_JAEGER_URL: [Jaeger server URL]      
       MF_MFXKIT_SECRET: [Mfxkit service secret]
+      MF_JAEGER_URL: [Jaeger server URL]
 ```
 
 To start the service outside of the container, execute the following shell script:
@@ -61,7 +56,6 @@ MF_MFXKIT_LOG_LEVEL=[Kit log level] MF_MFXKIT_HTTP_PORT=[Service HTTP port] MF_M
 
 ## Usage
 
-For more information about service capabilities and its usage, please check out
-the [API documentation](swagger.yaml).
+For more information about service capabilities and its usage, please check out the [API documentation](swagger.yaml).
 
 [doc]: http://mainflux.readthedocs.io
