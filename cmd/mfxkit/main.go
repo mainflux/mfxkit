@@ -17,11 +17,11 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/darkodraskovic/mfxkit/mfxkit"
-	"github.com/darkodraskovic/mfxkit/mfxkit/api"
-	mfxkithttpapi "github.com/darkodraskovic/mfxkit/mfxkit/api/mfxkit/http"
 	"github.com/mainflux/mainflux"
 	"github.com/mainflux/mainflux/logger"
+	"github.com/mainflux/mainflux/mfxkit"
+	"github.com/mainflux/mainflux/mfxkit/api"
+	mfxkithttpapi "github.com/mainflux/mainflux/mfxkit/api/mfxkit/http"
 
 	kitprometheus "github.com/go-kit/kit/metrics/prometheus"
 	opentracing "github.com/opentracing/opentracing-go"
@@ -30,7 +30,7 @@ import (
 )
 
 const (
-	defLogLevel   = "error"
+	defLogLevel   = "info"
 	defHTTPPort   = "9021"
 	defJaegerURL  = ""
 	defServerCert = ""

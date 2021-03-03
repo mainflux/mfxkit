@@ -10,8 +10,8 @@ package http
 import (
 	"context"
 
-	"github.com/darkodraskovic/mfxkit/mfxkit"
 	"github.com/go-kit/kit/endpoint"
+	"github.com/mainflux/mainflux/mfxkit"
 )
 
 func pingEndpoint(svc mfxkit.Service) endpoint.Endpoint {
