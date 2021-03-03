@@ -1,12 +1,12 @@
 FROM golang:1.13-alpine AS builder
 
-WORKDIR /go/src/github.com/mfxkit/mfxkit
+WORKDIR /go/src/github.com/mainflux/mainflux/mfxkit
 COPY . .
 RUN apk update \
-    && apk add make\
+    && apk add make \
     && apk add git
 RUN go get all
-WORKDIR /go/src/github.com/mfxkit/mfxkit/cmd/mfxkit
+WORKDIR /go/src/github.com/mainflux/mainflux/mfxkit/cmd/mfxkit
 RUN go build main.go -o build/mainflux-mfxkit\
     && mv build/mainflux-mfxkit /exe
 
