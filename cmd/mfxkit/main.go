@@ -30,7 +30,7 @@ import (
 )
 
 const (
-	defLogLevel   = "info"
+	defLogLevel   = "error"
 	defHTTPPort   = "9021"
 	defJaegerURL  = ""
 	defServerCert = ""
@@ -39,10 +39,10 @@ const (
 
 	envLogLevel   = "MF_MFXKIT_LOG_LEVEL"
 	envHTTPPort   = "MF_MFXKIT_HTTP_PORT"
-	envJaegerURL  = "MF_JAEGER_URL"
 	envServerCert = "MF_MFXKIT_SERVER_CERT"
 	envServerKey  = "MF_MFXKIT_SERVER_KEY"
 	envSecret     = "MF_MFXKIT_SECRET"
+	envJaegerURL  = "MF_JAEGER_URL"
 )
 
 type config struct {
@@ -50,10 +50,10 @@ type config struct {
 	httpPort     string
 	authHTTPPort string
 	authGRPCPort string
-	jaegerURL    string
 	serverCert   string
 	serverKey    string
 	secret       string
+	jaegerURL    string
 }
 
 func main() {

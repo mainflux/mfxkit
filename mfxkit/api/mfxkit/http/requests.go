@@ -1,9 +1,5 @@
-//
-// Copyright (c) 2019
-// Mainflux
-//
+// Copyright (c) Mainflux
 // SPDX-License-Identifier: Apache-2.0
-//
 
 package http
 
@@ -19,7 +15,7 @@ type pingReq struct {
 
 func (req pingReq) validate() error {
 	if req.Secret == "" {
-		return mfxkit.ErrUnauthorizedAccess
+		return mfxkit.ErrMalformedEntity
 	}
 
 	return nil
