@@ -1,14 +1,10 @@
-FROM golang:1.13-alpine AS builder
+FROM golang:1.16-alpine AS builder
 
-WORKDIR /go/src/github.com/mainflux/mainflux/mfxkit
+WORKDIR /go/src/github.com/mainflux/service-template/mfxkit
 COPY . .
-RUN apk update \
-    && apk add make \
-    && apk add git
-RUN go get all
-WORKDIR /go/src/github.com/mainflux/mainflux/mfxkit/cmd/mfxkit
-RUN go build main.go -o build/mainflux-mfxkit\
-    && mv build/mainflux-mfxkit /exe
+RUN CGO_ENABLED=0 GOARCH=amd64 \
+  go build -mod=vendor -ldflags "-s -w" -o build/mainflux-mfxkit cmd/mfxkit/main.go \
+  && mv build/mainflux-mfxkit /exe
 
 FROM scratch
 COPY --from=builder /exe /

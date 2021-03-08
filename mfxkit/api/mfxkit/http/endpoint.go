@@ -7,7 +7,7 @@ import (
 	"context"
 
 	"github.com/go-kit/kit/endpoint"
-	"github.com/mainflux/mainflux/mfxkit"
+	"github.com/mainflux/service-template/mfxkit"
 )
 
 func pingEndpoint(svc mfxkit.Service) endpoint.Endpoint {
