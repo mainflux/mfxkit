@@ -3,7 +3,7 @@
 
 package http
 
-import "github.com/mainflux/mainflux/mfxkit"
+import "github.com/mainflux/service-template/mfxkit"
 
 type apiReq interface {
 	validate() error

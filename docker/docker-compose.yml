@@ -8,14 +8,15 @@
 
 version: "3.7"
 
+networks:
+  docker_mainflux-base-net:
+    external: true
+
 services:
   mfxkit:
+    image: mainflux/mfxkit:latest
     container_name: mainflux-mfxkit
-    build:
-      context: ../
-      dockerfile: docker/Dockerfile
-    ports:
-      - ${MF_MFXKIT_HTTP_PORT}:${MF_MFXKIT_HTTP_PORT}
+    restart: on-failure
     environment:
       MF_MFXKIT_LOG_LEVEL: ${MF_MFXKIT_LOG_LEVEL}
       MF_MFXKIT_HTTP_PORT: ${MF_MFXKIT_HTTP_PORT}
@@ -23,3 +24,7 @@ services:
       MF_MFXKIT_SERVER_KEY: ${MF_MFXKIT_SERVER_KEY}
       MF_JAEGER_URL: ${MF_JAEGER_URL}
       MF_MFXKIT_SECRET: ${MF_MFXKIT_SECRET}
+    ports:
+      - ${MF_MFXKIT_HTTP_PORT}:${MF_MFXKIT_HTTP_PORT}
+    networks:
+      - docker_mainflux-base-net

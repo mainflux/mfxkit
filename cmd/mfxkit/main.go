@@ -19,9 +19,9 @@ import (
 
 	"github.com/mainflux/mainflux"
 	"github.com/mainflux/mainflux/logger"
-	"github.com/mainflux/mainflux/mfxkit"
-	"github.com/mainflux/mainflux/mfxkit/api"
-	mfxkithttpapi "github.com/mainflux/mainflux/mfxkit/api/mfxkit/http"
+	"github.com/mainflux/service-template/mfxkit"
+	"github.com/mainflux/service-template/mfxkit/api"
+	mfxkithttpapi "github.com/mainflux/service-template/mfxkit/api/mfxkit/http"
 
 	kitprometheus "github.com/go-kit/kit/metrics/prometheus"
 	opentracing "github.com/opentracing/opentracing-go"
