@@ -8,28 +8,29 @@ Copy `mfxkit` directory to the `mainflux` root directory, e.g. `~/go/src/github.
 
 In `mainflux` root directory run
 
-```
+```bash
 MF_MFXKIT_LOG_LEVEL=info go run cmd/mfxkit/main.go
 ```
 
 You should get a message similar to this one
 
-```
-{"level":"info","message":"Mfxkit service started using http on port 9021","ts":"2021-03-03T11:16:27.027381203Z"}
+```bash
+{"level":"info","message":"ping service http server listening at :9099 without TLS","ts":"2023-06-26T21:03:06.3116097Z"}
+{"level":"info","message":"ping service gRPC server listening at :9199 without TLS","ts":"2023-06-26T21:03:06.311867558Z"}
 ```
 
-In the other terminal window run 
+In the other terminal window run
 
-```
-curl -i -X POST -H "Content-Type: application/json" localhost:9021/mfxkit -d '{"secret":"secret"}'
+```bash
+curl -i -X POST -H "Content-Type: application/json" localhost:9099/ping -d '{"secret":"secret"}'
 ```
 
 If everything goes well, you should get
 
-```
+```bash
 HTTP/1.1 200 OK
 Content-Type: application/json
-Date: Wed, 03 Mar 2021 11:17:10 GMT
+Date: Mon, 26 Jun 2023 21:03:26 GMT
 Content-Length: 30
 
 {"greeting":"Hello World :)"}
@@ -37,12 +38,12 @@ Content-Length: 30
 
 To change the secret or the port, prefix the `go run` command with environment variable assignments, e.g.
 
-```
+```bash
 MF_MFXKIT_LOG_LEVEL=info MF_MFXKIT_SECRET=secret2 MF_MFXKIT_HTTP_PORT=9022 go run cmd/mfxkit/main.go
 ```
 
 To see the change in action, run
 
-```
-curl -i -X POST -H "Content-Type: application/json" localhost:9022/mfxkit -d '{"secret":"secret2"}'
+```bash
+curl -i -X POST -H "Content-Type: application/json" localhost:9022/ping -d '{"secret":"secret2"}'
 ```
