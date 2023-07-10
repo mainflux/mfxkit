@@ -10,9 +10,6 @@ github.com/cespare/xxhash/v2
 # github.com/davecgh/go-spew v1.1.1
 ## explicit
 github.com/davecgh/go-spew/spew
-# github.com/fatih/color v1.15.0
-## explicit; go 1.17
-github.com/fatih/color
 # github.com/go-gorp/gorp/v3 v3.1.0
 ## explicit; go 1.18
 github.com/go-gorp/gorp/v3
@@ -51,12 +48,6 @@ github.com/golang/protobuf/ptypes
 github.com/golang/protobuf/ptypes/any
 github.com/golang/protobuf/ptypes/duration
 github.com/golang/protobuf/ptypes/timestamp
-# github.com/hokaccha/go-prettyjson v0.0.0-20211117102719-0474bc63780f
-## explicit
-github.com/hokaccha/go-prettyjson
-# github.com/inconshreveable/mousetrap v1.1.0
-## explicit; go 1.18
-github.com/inconshreveable/mousetrap
 # github.com/jackc/pgpassfile v1.0.0
 ## explicit; go 1.12
 github.com/jackc/pgpassfile
@@ -91,18 +82,9 @@ github.com/mainflux/callhome/pkg/client
 github.com/mainflux/mainflux
 github.com/mainflux/mainflux/logger
 github.com/mainflux/mainflux/pkg/errors
-# github.com/mattn/go-colorable v0.1.13
-## explicit; go 1.15
-github.com/mattn/go-colorable
-# github.com/mattn/go-isatty v0.0.19
-## explicit; go 1.15
-github.com/mattn/go-isatty
 # github.com/matttproud/golang_protobuf_extensions v1.0.4
 ## explicit; go 1.9
 github.com/matttproud/golang_protobuf_extensions/pbutil
-# github.com/pelletier/go-toml v1.9.5
-## explicit; go 1.12
-github.com/pelletier/go-toml
 # github.com/pmezard/go-difflib v1.0.0
 ## explicit
 github.com/pmezard/go-difflib/difflib
@@ -128,12 +110,6 @@ github.com/prometheus/procfs/internal/util
 ## explicit; go 1.17
 github.com/rubenv/sql-migrate
 github.com/rubenv/sql-migrate/sqlparse
-# github.com/spf13/cobra v1.7.0
-## explicit; go 1.15
-github.com/spf13/cobra
-# github.com/spf13/pflag v1.0.5
-## explicit; go 1.12
-github.com/spf13/pflag
 # github.com/stretchr/testify v1.8.4
 ## explicit; go 1.20
 github.com/stretchr/testify/assert
