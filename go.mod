@@ -1,6 +1,6 @@
 module github.com/mainflux/mfxkit
 
-go 1.19
+go 1.20
 
 require (
 	github.com/caarlos0/env/v7 v7.1.0
@@ -8,7 +8,7 @@ require (
 	github.com/go-zoo/bone v1.3.0
 	github.com/jackc/pgx/v5 v5.4.1
 	github.com/jmoiron/sqlx v1.3.5
-	github.com/mainflux/callhome v0.0.0-20230626140149-b03b1f4c46f2
+	github.com/mainflux/callhome v0.0.0-20230707120248-b3b440766d56
 	github.com/mainflux/mainflux v0.0.0-20230622220656-723dc52c627d
 	github.com/prometheus/client_golang v1.16.0
 	github.com/rubenv/sql-migrate v1.5.1
@@ -21,7 +21,7 @@ require (
 	go.opentelemetry.io/otel/sdk v1.16.0
 	go.opentelemetry.io/otel/trace v1.16.0
 	golang.org/x/sync v0.3.0
-	google.golang.org/grpc v1.56.1
+	google.golang.org/grpc v1.56.2
 	google.golang.org/protobuf v1.31.0
 )
 
@@ -45,11 +45,11 @@ require (
 	github.com/prometheus/procfs v0.11.0 // indirect
 	github.com/subosito/gotenv v1.4.2 // indirect
 	go.opentelemetry.io/otel/metric v1.16.0 // indirect
-	golang.org/x/crypto v0.10.0 // indirect
-	golang.org/x/net v0.11.0 // indirect
+	golang.org/x/crypto v0.11.0 // indirect
+	golang.org/x/net v0.12.0 // indirect
 	golang.org/x/oauth2 v0.9.0 // indirect
-	golang.org/x/sys v0.9.0 // indirect
-	golang.org/x/text v0.10.0 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20230626202813-9b080da550b3 // indirect
+	golang.org/x/sys v0.10.0 // indirect
+	golang.org/x/text v0.11.0 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20230706204954-ccb25ca9f130 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )

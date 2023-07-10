@@ -3,12 +3,12 @@
 
 MF_DOCKER_IMAGE_NAME_PREFIX ?= mainflux
 BUILD_DIR = build
-SERVICES = mfxkit cli
+SERVICES = mfxkit
 DOCKERS = $(addprefix docker_,$(SERVICES))
 DOCKERS_DEV = $(addprefix docker_dev_,$(SERVICES))
 CGO_ENABLED ?= 0
 GOARCH ?= amd64
-VERSION ?= $(shell git describe --abbrev=0 --tags 2>/dev/null || echo "0.14.0")
+VERSION ?= $(shell git describe --abbrev=0 --tags 2>/dev/null || echo "latest")
 COMMIT ?= $(shell git rev-parse HEAD)
 TIME ?= $(shell date +%F_%T)
 

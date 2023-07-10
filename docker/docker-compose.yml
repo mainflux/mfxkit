@@ -30,14 +30,3 @@ services:
       - ${MF_MFXKIT_GRPC_PORT}:${MF_MFXKIT_GRPC_PORT}
     networks:
       - docker_mainflux-base-net
-
-  jaeger:
-    image: jaegertracing/all-in-one:1.38.0
-    container_name: mainflux-jaeger
-    ports:
-      - ${MF_JAEGER_PORT}:${MF_JAEGER_PORT}/udp
-      - ${MF_JAEGER_FRONTEND}:${MF_JAEGER_FRONTEND}
-      - ${MF_JAEGER_COLLECTOR}:${MF_JAEGER_COLLECTOR}
-      - ${MF_JAEGER_CONFIGS}:${MF_JAEGER_CONFIGS}
-    networks:
-      - docker_mainflux-base-net
