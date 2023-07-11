@@ -1,11 +1,13 @@
 // Copyright (c) Mainflux
 // SPDX-License-Identifier: Apache-2.0
 
+//go:build !test
 // +build !test
 
 package api
 
 import (
+	"context"
 	"time"
 
 	"github.com/go-kit/kit/metrics"
@@ -20,8 +22,7 @@ type metricsMiddleware struct {
 	svc     mfxkit.Service
 }
 
-// MetricsMiddleware instruments core service by tracking request count and
-// latency.
+// MetricsMiddleware instruments core service by tracking request count and latency.
 func MetricsMiddleware(svc mfxkit.Service, counter metrics.Counter, latency metrics.Histogram) mfxkit.Service {
 	return &metricsMiddleware{
 		counter: counter,
@@ -30,11 +31,12 @@ func MetricsMiddleware(svc mfxkit.Service, counter metrics.Counter, latency metr
 	}
 }
 
-func (ms *metricsMiddleware) Ping(secret string) (response string, err error) {
+// Ping instruments Ping method with metrics.
+func (ms *metricsMiddleware) Ping(ctx context.Context, secret string) (response string, err error) {
 	defer func(begin time.Time) {
 		ms.counter.With("method", "ping").Add(1)
 		ms.latency.With("method", "ping").Observe(time.Since(begin).Seconds())
 	}(time.Now())
 
-	return ms.svc.Ping(secret)
+	return ms.svc.Ping(ctx, secret)
 }

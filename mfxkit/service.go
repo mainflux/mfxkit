@@ -4,6 +4,7 @@
 package mfxkit
 
 import (
+	"context"
 	"errors"
 )
 
@@ -17,29 +18,23 @@ var (
 	ErrUnauthorizedAccess = errors.New("missing or invalid credentials provided")
 )
 
-// Service specifies an API that must be fullfiled by the domain service
-// implementation, and all of its decorators (e.g. logging & metrics).
-type Service interface {
-	// Ping compares a given string with secret
-	Ping(string) (string, error)
-}
-
-type mfxkitService struct {
+type service struct {
 	secret string
 }
 
-var _ Service = (*mfxkitService)(nil)
+var _ Service = (*service)(nil)
 
 // New instantiates the mfxkit service implementation.
 func New(secret string) Service {
-	return &mfxkitService{
+	return &service{
 		secret: secret,
 	}
 }
 
-func (ks *mfxkitService) Ping(secret string) (string, error) {
+func (ks *service) Ping(ctx context.Context, secret string) (string, error) {
 	if ks.secret != secret {
 		return "", ErrUnauthorizedAccess
 	}
+
 	return "Hello World :)", nil
 }

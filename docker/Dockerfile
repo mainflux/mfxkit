@@ -1,11 +1,23 @@
-FROM golang:1.16-alpine AS builder
+# Copyright (c) Mainflux
+# SPDX-License-Identifier: Apache-2.0
+
+FROM golang:1.20-alpine AS builder
+ARG SVC
+ARG GOARCH
+ARG GOARM
+ARG VERSION
+ARG COMMIT
+ARG TIME
 
 WORKDIR /go/src/github.com/mainflux/mfxkit
 COPY . .
-RUN CGO_ENABLED=0 GOARCH=amd64 \
-  go build -mod=vendor -ldflags "-s -w" -o build/mainflux-mfxkit cmd/mfxkit/main.go \
-  && mv build/mainflux-mfxkit /exe
+RUN apk update \
+    && apk add make\
+    && make $SVC \
+    && mv build/mainflux-$SVC /exe
 
 FROM scratch
+# Certificates are needed so that mailing util can work.
+COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 COPY --from=builder /exe /
 ENTRYPOINT ["/exe"]

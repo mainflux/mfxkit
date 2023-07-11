@@ -1,0 +1,24 @@
+// Copyright (c) Mainflux
+// SPDX-License-Identifier: Apache-2.0
+
+syntax = "proto3";
+
+package mainflux.mfxkit;
+
+option go_package = "./mfxkit";
+
+// Service describes the service API.
+service Service {
+    // Ping compares the given secret with the one stored in the database.
+    rpc Ping(PingReq) returns (PingRes) {}
+}
+
+// PingReq contains the secret to be compared with the one stored in the database.
+message PingReq {
+    string secret = 1;
+}
+
+// PingRes contains the result of the comparison. It returns empty if the secrets does not match.
+message PingRes {
+    string message = 1;
+}
